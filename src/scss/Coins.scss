@@ -1,0 +1,82 @@
+.coins{
+  margin: 1vh 2vw;
+}
+.coins-container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.each-element{
+  display: flex;
+  border: 2px solid #d6e0f0;
+  border-radius: 10px;
+  margin-bottom: 0.5vh;
+}
+
+.coin {
+  flex: 9;
+  align-self: center;
+
+  display: flex;
+  justify-content: space-between;
+  height: 4vh;
+  min-height: 50px;
+  padding: 0 2vw ;
+  &__element{
+
+    //border: 1px solid black;
+    align-self: center;
+    text-align: center;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+  }
+  &__rank {
+    font-size: 16px;
+    font-weight: bold;
+    flex: 0 1 5%;
+  }
+  //
+  &__name {
+    flex: 0 1 30%;
+  }
+  //
+  &__symbol {
+    flex: 0 1 20%;
+    text-align: center;
+    //border: 1px solid black;
+    font-weight: bold;
+
+  }
+  //
+  &__price {
+    flex: 0 1 15%;
+    font-weight: bold;
+  }
+
+
+
+  &__posChange {
+    font-size: 16px;
+    color: green;
+    flex: 0 1 20%;
+  }
+
+  &__negChange {
+    font-size: 16px;
+    color: #b71717;
+    flex: 0 1 20%;
+  }
+}
+
+.addToWalletButton{
+  background-color: #d6e0f0;
+  align-self: center;
+  margin-right: 1vw;
+  width: 8vw;
+  max-width: 40px;
+  height: 8vw;
+  max-height: 40px;
+  border-radius: 50%;
+}
+

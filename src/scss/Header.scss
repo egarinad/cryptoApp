@@ -1,0 +1,59 @@
+.header{
+  background-color: #d6e0f0;
+}
+
+.container{
+  color: #393b44;
+  padding: 0 2vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 7vh;
+}
+
+.topThreeCoins{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  //&__1{
+  //  display: flex;
+  //  flex-direction: row;
+  //  margin-right: 2vw;
+  //  border: 1px solid black;
+  //}
+  //&__2{
+  //  display: flex;
+  //  flex-direction: row;
+  //  margin-right: 2vw;
+  //  border: 1px solid black;
+  //}
+  //&__3{
+  //  display: flex;
+  //  flex-direction: row;
+  //  margin-right: 2vw;
+  //  border: 1px solid black;
+  //}
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  margin-right: 2vw;
+  //border: 1px solid black;
+  //box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 1vh 1vw;
+}
+
+.coin-symbol{
+  font-weight: bold;
+  margin-right: 1vw;
+}
+
+.wallet{
+  align-self: center;
+}
