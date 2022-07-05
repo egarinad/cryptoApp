@@ -18,6 +18,9 @@ export const coinsReducer = (state = defaultCoins, action) => {
     }
 };
 
-export const loadCoins = (payload) => ({type: LOAD_COINS});
-export const loadCoinsSuccess = (payload) => ({type: LOAD_COINS_SUCCESS, payload});
+export const loadCoins = () => ({type: LOAD_COINS});
+export const loadCoinsSuccess = (payload) => ({
+    type: LOAD_COINS_SUCCESS,
+    payload,
+});
 export const fetchCoins = () => ({type: FETCH_COINS});

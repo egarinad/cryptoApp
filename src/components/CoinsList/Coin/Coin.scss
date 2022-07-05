@@ -1,0 +1,116 @@
+.coin-container {
+  //border: 1px solid black;
+  padding: 2vh 2vw 0;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 900px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coin-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__rank {
+    font-size: 18px;
+    background-color: #8d93ab;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  &__name {
+    font-size: 20px;
+    border-bottom: 2px solid #8d93ab;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+  }
+
+  &__button {
+    background-color: #8d93ab;
+    margin-left: 2vw;
+    align-self: center;
+    font-size: 18px;
+    width: 15vw;
+    max-width: 50px;
+    height: 15vw;
+    max-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+
+.coin-chart {
+  background-color: #d6e0f0;
+  text-align: center;
+  height: 40vh;
+}
+
+.coin-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #8d93ab;
+  border-radius: 10px;
+  height: 30vh;
+  font-weight: bold;
+  padding: 2vh 0 0;
+
+  &__symbol {
+    flex: 1;
+    margin: 10px 0 0 10px;
+    font-size: 18px;
+  }
+
+  &__price {
+    flex: 1;
+    margin: 10px 0 0 10px;
+    font-size: 18px;
+  }
+
+  &__posChange {
+    flex: 1;
+    margin: 10px 0 0 10px;
+    font-size: 18px;
+    color: #2da62d;
+  }
+
+  &__negChange {
+    flex: 1;
+    margin: 10px 0 0 10px;
+    font-size: 18px;
+    color: #b71717;
+  }
+
+  &__marketCap {
+    flex: 1;
+    margin: 10px 0 0 10px;
+    font-size: 18px;
+  }
+}
+
+.marker {
+  color: black;
+  font-weight: 400;
+}
+
+.add-to-wallet-button-button {
+  background-color: #8d93ab;
+  font-size: 16px;
+  width: 50vw;
+  max-width: 400px;
+  margin: 0 auto;
+  height: 6vh;
+
+  border-radius: 10px;
+}

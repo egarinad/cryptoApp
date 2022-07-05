@@ -1,12 +1,11 @@
-.coins{
-  margin: 1vh 2vw;
-}
 .coins-container {
+  padding: 1vh 2vw;
   margin: 0 auto;
+  width: 100vw;
   max-width: 900px;
 }
 
-.each-element{
+.each-coin-with-button {
   display: flex;
   border: 2px solid #d6e0f0;
   border-radius: 10px;
@@ -21,44 +20,37 @@
   justify-content: space-between;
   height: 4vh;
   min-height: 50px;
-  padding: 0 2vw ;
-  &__element{
+  padding-left: 0.5vw;
 
-    //border: 1px solid black;
+  &__element {
     align-self: center;
     text-align: center;
-    //display: flex;
-    //align-items: center;
-    //justify-content: center;
   }
+
   &__rank {
     font-size: 16px;
     font-weight: bold;
     flex: 0 1 5%;
   }
-  //
+
   &__name {
     flex: 0 1 30%;
   }
-  //
+
   &__symbol {
     flex: 0 1 20%;
     text-align: center;
-    //border: 1px solid black;
     font-weight: bold;
-
   }
-  //
+
   &__price {
     flex: 0 1 15%;
     font-weight: bold;
   }
 
-
-
   &__posChange {
     font-size: 16px;
-    color: green;
+    color: #2da62d;
     flex: 0 1 20%;
   }
 
@@ -69,7 +61,7 @@
   }
 }
 
-.addToWalletButton{
+.add-to-wallet-button {
   background-color: #d6e0f0;
   align-self: center;
   margin-right: 1vw;
@@ -79,4 +71,3 @@
   max-height: 40px;
   border-radius: 50%;
 }
-
