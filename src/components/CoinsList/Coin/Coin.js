@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import {useDispatch} from "react-redux";
 import {addCoin} from "../../../redux/walletReducer";
+import Modal from "../../Modals/AddCoinModal/Modal";
 import "./Coin.scss";
 //import SimpleChart from "../../../Chart/SimpleChart";
 
@@ -12,14 +13,10 @@ const Coin = () => {
     const [info, setInfo] = useState({});
     const [loading, setLoading] = useState(false);
 
+    const [modalActive, setModalActive] = useState(false);
+    const currentCoin = info;
+
     const dispatch = useDispatch();
-    const show = (coin) => {
-        const a = {
-            coinId: coin.id,
-            amount: 1,
-        };
-        dispatch(addCoin(a));
-    };
 
     useEffect(() => {
         setLoading(true);
@@ -30,7 +27,6 @@ const Coin = () => {
             })
             .then(() => setLoading(false));
     }, []);
-    console.log(info);
 
     return (
         <>
@@ -43,7 +39,9 @@ const Coin = () => {
                         <div className="coin-header__name">{info.name}</div>
                         <button
                             className="coin-header__button"
-                            onClick={() => show(info)}
+                            onClick={() => {
+                                setModalActive(true);
+                            }}
                             key={info.name}
                         >
                             +
@@ -80,13 +78,20 @@ const Coin = () => {
                     </div>
                     <button
                         className="add-to-wallet-button-button"
-                        onClick={() => show(info)}
+                        onClick={() => {
+                            setModalActive(true);
+                        }}
                         key={info.name}
                     >
                         Add to wallet
                     </button>
                 </div>
             )}
+            <Modal
+                active={modalActive}
+                setActive={setModalActive}
+                currentCoin={currentCoin}
+            />
         </>
     );
 };

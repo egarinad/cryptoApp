@@ -23,11 +23,13 @@
   padding-left: 0.5vw;
 
   &__element {
+    //border: 1px solid #000000;
     align-self: center;
     text-align: center;
   }
 
   &__rank {
+    margin-left: 1vw;
     font-size: 16px;
     font-weight: bold;
     flex: 0 1 5%;
@@ -44,7 +46,7 @@
   }
 
   &__price {
-    flex: 0 1 15%;
+    flex: 0 1 20%;
     font-weight: bold;
   }
 
@@ -62,7 +64,9 @@
 }
 
 .add-to-wallet-button {
+  font-weight: bold;
   background-color: #d6e0f0;
+  text-align: center;
   align-self: center;
   margin-right: 1vw;
   width: 8vw;

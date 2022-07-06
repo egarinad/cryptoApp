@@ -1,19 +1,12 @@
-import React from "react";
-import {useDispatch} from "react-redux";
-import {addCoin} from "../../redux/walletReducer";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import Coin from "./Coin/Coin";
 import "./Coins.scss";
+import Modal from "../Modals/AddCoinModal/Modal";
 
 const Coins = ({currentCoins}) => {
-    const dispatch = useDispatch();
-    const show = (coin) => {
-        const a = {
-            coinId: coin.id,
-            amount: 1,
-        };
-        dispatch(addCoin(a));
-    };
+    const [modalActive, setModalActive] = useState(false);
+    const [currentCoin, setCurrentCoin] = useState({});
 
     return (
         <div className="coins-container">
@@ -46,13 +39,22 @@ const Coins = ({currentCoins}) => {
                         </Link>
                         <button
                             className="add-to-wallet-button"
-                            onClick={() => show(coin)}
+                            //onClick={() => show(coin)}
+                            onClick={() => {
+                                setModalActive(true);
+                                setCurrentCoin(coin);
+                            }}
                             key={coin.name}
                         >
                             +
                         </button>
                     </div>
                 ))}
+            <Modal
+                active={modalActive}
+                setActive={setModalActive}
+                currentCoin={currentCoin}
+            />
         </div>
     );
 };
