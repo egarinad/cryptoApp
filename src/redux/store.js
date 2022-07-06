@@ -6,6 +6,8 @@ import {coinsWatcher} from "../saga/coinsSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
+
+
 const rootReducer = combineReducers({
     walletRed: walletReducer,
     coinsRed: coinsReducer,

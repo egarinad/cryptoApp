@@ -4,7 +4,6 @@ import {useDispatch} from "react-redux";
 import {addCoin} from "../../../redux/walletReducer";
 
 const Modal = ({active, setActive, currentCoin}) => {
-
     const [input, setInput] = useState("");
 
     const dispatch = useDispatch();

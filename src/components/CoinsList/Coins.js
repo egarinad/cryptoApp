@@ -3,22 +3,10 @@ import {Link} from "react-router-dom";
 import Coin from "./Coin/Coin";
 import "./Coins.scss";
 import Modal from "../Modals/AddCoinModal/Modal";
-import {useDispatch} from "react-redux";
-import {delCoin} from "../../redux/walletReducer";
 
 const Coins = ({currentCoins}) => {
     const [modalActive, setModalActive] = useState(false);
     const [currentCoin, setCurrentCoin] = useState({});
-
-    const dispatch = useDispatch();
-
-    // const show = (coin) => {
-    //     const a = {
-    //         coinId: coin.id,
-    //     };
-    //     dispatch(delCoin(a));
-    // }
-
     return (
         <div className="coins-container">
             {currentCoins &&
@@ -36,7 +24,8 @@ const Coins = ({currentCoins}) => {
                             <div className="coin__price coin__element">
                                 {coin.priceUsd > 1
                                     ? (+coin.priceUsd).toFixed(2)
-                                    : (+coin.priceUsd).toFixed(5)}
+                                    : (+coin.priceUsd).toFixed(5)}{" "}
+                                $
                             </div>
                             {+coin.changePercent24Hr > 0 ? (
                                 <div className="coin__posChange coin__element">

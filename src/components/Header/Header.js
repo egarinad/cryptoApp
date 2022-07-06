@@ -3,8 +3,11 @@ import {useSelector} from "react-redux";
 import "./Header.scss";
 import {Link} from "react-router-dom";
 import Wallet from "../Wallet/Wallet";
+import {useState} from "react";
+import WalletModal from "../Modals/WalletModal/WalletModal";
 
 const Header = () => {
+    const [modalActive, setModalActive] = useState(false);
 
 
     let coins = useSelector((state) => state.coinsRed.coins);
@@ -27,10 +30,14 @@ const Header = () => {
                         </li>
                     ))}
                 </ul>
-                <Link to="/wallet" element={<Wallet/>} className="wallet">
+                <button className="wallet-button" onClick={()=>setModalActive(true)}>
                     WALLET
-                </Link>
+                </button>
             </div>
+            <WalletModal
+                active={modalActive}
+                setActive={setModalActive}
+            />
         </div>
     );
 };

@@ -1,7 +1,6 @@
 const defaultWallet = {
     wallet: {
-        "bitcoin": 1,
-        "ethereum": 1,
+
     },
 };
 

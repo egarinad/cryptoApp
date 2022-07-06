@@ -55,7 +55,7 @@ const Coin = () => {
                             {info.priceUsd > 1
                                 ? (+info.priceUsd).toFixed(2)
                                 : (+info.priceUsd).toFixed(5)}{" "}
-                            USD
+                            $
                         </div>
                         {+info.changePercent24Hr > 0 ? (
                             <div className="info__posChange">
@@ -70,7 +70,7 @@ const Coin = () => {
                         )}
                         <div className="info__marketCap">
                             <span className="marker">MarketCap: </span>{" "}
-                            {(+info.marketCapUsd).toLocaleString()} USD
+                            {(+info.marketCapUsd).toLocaleString()} $
                         </div>
                     </div>
                     <button
