@@ -17,6 +17,8 @@ const App = () => {
         dispatch(fetchCoins());
     }, []);
 
+
+
     return (
         <div className="wrapper">
             <Header/>

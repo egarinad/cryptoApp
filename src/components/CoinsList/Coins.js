@@ -11,7 +11,7 @@ const Coins = ({currentCoins}) => {
         <div className="coins-container">
             {currentCoins &&
                 currentCoins.map((coin, i) => (
-                    <div className="each-coin-with-button">
+                    <div className="each-coin-with-button" key={i}>
                         <Link
                             to={`/coin/${coin.id}`}
                             element={<Coin/>}
