@@ -18,8 +18,10 @@
   &__rank {
     font-size: 18px;
     background-color: #8d93ab;
-    padding: 15px;
     border-radius: 10px;
+    text-align: center;
+    min-width:40px ;
+    line-height: 35px;
   }
 
   &__name {
@@ -36,12 +38,11 @@
     align-self: center;
     font-size: 18px;
     width: 15vw;
-    max-width: 50px;
+    max-width: 35px;
     height: 15vw;
-    max-height: 50px;
+    max-height: 35px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 50px;
+    line-height: 35px;
   }
 }
 
@@ -64,42 +65,43 @@
   border-radius: 10px;
   height: 30vh;
   font-weight: bold;
-  padding: 2vh 0 0;
+  padding: 2.5vh 0 0;
+  font-size: 16px;
 
   &__symbol {
     flex: 1;
     margin: 10px 0 0 10px;
-    font-size: 18px;
   }
 
   &__price {
     flex: 1;
     margin: 10px 0 0 10px;
-    font-size: 18px;
+
   }
 
   &__posChange {
     flex: 1;
     margin: 10px 0 0 10px;
-    font-size: 18px;
     color: #2da62d;
   }
 
   &__negChange {
     flex: 1;
     margin: 10px 0 0 10px;
-    font-size: 18px;
     color: #b71717;
   }
 
   &__marketCap {
     flex: 1;
     margin: 10px 0 0 10px;
-    font-size: 18px;
   }
 }
 
 .marker {
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+  font-size: 16px;
   color: black;
   font-weight: 400;
 }

@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import Wallet from "../Wallet/Wallet";
 
 const Header = () => {
+
+
     let coins = useSelector((state) => state.coinsRed.coins);
     coins = coins.slice(0, 3);
     return (

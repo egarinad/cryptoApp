@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import Loader from "../../Loader/Loader";
-import {useDispatch} from "react-redux";
-import {addCoin} from "../../../redux/walletReducer";
 import Modal from "../../Modals/AddCoinModal/Modal";
 import "./Coin.scss";
 //import SimpleChart from "../../../Chart/SimpleChart";
@@ -16,7 +14,6 @@ const Coin = () => {
     const [modalActive, setModalActive] = useState(false);
     const currentCoin = info;
 
-    const dispatch = useDispatch();
 
     useEffect(() => {
         setLoading(true);
@@ -80,6 +77,7 @@ const Coin = () => {
                         className="add-to-wallet-button-button"
                         onClick={() => {
                             setModalActive(true);
+
                         }}
                         key={info.name}
                     >

@@ -5,12 +5,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.2s;
+  display: none;
 
   &__content {
     padding: 10px 20px;
@@ -25,8 +22,7 @@
 }
 
 .modal.active {
-  opacity: 1;
-  pointer-events: all;
+  display: flex;
 }
 
 .modal-header {
