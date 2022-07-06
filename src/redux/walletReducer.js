@@ -22,7 +22,7 @@ export const walletReducer = (state = defaultWallet, action) => {
             return {...state, wallet: {...newWallet}};
         case DEL_COIN:
             const delWallet = {...state.wallet};
-            delete delWallet[coinId]
+            delete delWallet[coinId];
             localStorage.setItem("wallet", JSON.stringify(delWallet))
             return {...state,  wallet: {...delWallet}}
         default:

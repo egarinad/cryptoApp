@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "./WalletMadal.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {addCoinsFromStorage, delCoin} from "../../../redux/walletReducer";
@@ -7,14 +7,7 @@ const WalletModal = ({active, setActive}) => {
     const dispatch = useDispatch();
     const wallet = useSelector((state) => state.walletRed.wallet);
     const coins = useSelector((state) => state.coinsRed.coins);
-    // useEffect(()=>{
-    //     const savedWallet = localStorage.getItem("wallet")
-    //     console.log(savedWallet)
-    //     if(savedWallet)
-    //         dispatch(addCoinsFromStorage(JSON.parse(savedWallet)))
-    // }, []);
     let arr = Object.entries(wallet);
-    console.log("Wallet",arr);
     arr = arr.map((elem) => {
         let price = coins.find((coin) => elem[0] === coin.id);
         elem.push(price);
@@ -29,8 +22,6 @@ const WalletModal = ({active, setActive}) => {
     const fullPrice = arr.reduce((sum, current) => {
         return (sum += +current[4]);
     }, 0);
-
-
 
     const delFromWallet = (coin) => {
         const a = {
@@ -64,23 +55,20 @@ const WalletModal = ({active, setActive}) => {
                 </div>
                 <ul className="wallet-list">
                     {arr.map((item, i) => (
-                        <>
-                            <li className="wallet-list-item" key={i}>
-                                <div className="wallet-list-item__name">{(item[2]).symbol}</div>
-                                <div className="wallet-list-item__amount">{item[1]}</div>
-                                <div className="wallet-list-item__sum">
-                                    {item[4] > 1 ? (+item[4]).toFixed(2) : (+item[4]).toFixed(5)}{" "}
-                                    $
-                                </div>
-                                <button
-                                    key={i}
-                                    className="wallet-list-item__button"
-                                    onClick={() => delFromWallet(item[2])}
-                                >
-                                    X
-                                </button>
-                            </li>
-                        </>
+                        <li className="wallet-list-item" key={i}>
+                            <div className="wallet-list-item__name">{(item[2]).symbol}</div>
+                            <div className="wallet-list-item__amount">{item[1]}</div>
+                            <div className="wallet-list-item__sum">
+                                {item[4] > 1 ? (+item[4]).toFixed(2) : (+item[4]).toFixed(5)}{" "}
+                                $
+                            </div>
+                            <button
+                                className="wallet-list-item__button"
+                                onClick={() => delFromWallet(item[2])}
+                            >
+                                X
+                            </button>
+                        </li>
                     ))}
                 </ul>
             </div>

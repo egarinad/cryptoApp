@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Coin from "./components/CoinsList/Coin/Coin";
 import Loader from "./components/Loader/Loader";
 import Pagination from "./components/Pagination/Pagination";
+import {addCoinsFromStorage} from "./redux/walletReducer";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -17,7 +18,13 @@ const App = () => {
         dispatch(fetchCoins());
     }, []);
 
-
+    useEffect(()=>{
+        const savedWallet = localStorage.getItem("wallet")
+        setTimeout(()=>{
+            if(savedWallet)
+                dispatch(addCoinsFromStorage(JSON.parse(savedWallet)))
+        },500)
+    }, []);
 
     return (
         <div className="wrapper">
