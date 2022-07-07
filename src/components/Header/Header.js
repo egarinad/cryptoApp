@@ -29,8 +29,7 @@ const Header = () => {
                             <div className="item__price">
                                 {+coin.priceUsd > 1 || +coin.priceUsd===0
                                     ? (+coin.priceUsd).toFixed(2)
-                                    : (+coin.priceUsd).toFixed(4)}{" "}
-                                $
+                                    : (+coin.priceUsd).toFixed(4)}
                             </div>
                         </li>
                     ))}
