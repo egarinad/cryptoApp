@@ -1,5 +1,5 @@
 .coin-container {
-  padding: 2vh 2vw 0  ;
+  padding: 2vh 2vw 0;
   margin: 0 auto;
   width: 100vw;
   max-width: 900px;
@@ -21,7 +21,7 @@
     background-color: #8d93ab;
     border-radius: 10px;
     text-align: center;
-    min-width:40px ;
+    min-width: 40px;
     line-height: 35px;
   }
 
@@ -47,8 +47,6 @@
   }
 }
 
-
-
 .coin-chart {
   margin: 2vh 0;
   @media (max-width: 800px) {
@@ -59,7 +57,7 @@
 .coin-info {
   display: flex;
   flex-direction: column;
-  height:20vh;
+  height: 20vh;
 }
 
 .info {
@@ -81,7 +79,6 @@
   &__price {
     flex: 1;
     margin: 10px 10px 0;
-
   }
 
   &__posChange {

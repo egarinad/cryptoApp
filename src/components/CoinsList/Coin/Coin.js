@@ -14,7 +14,6 @@ const Coin = () => {
     const [modalActive, setModalActive] = useState(false);
     const currentCoin = info;
 
-
     useEffect(() => {
         setLoading(true);
         fetch(url)
@@ -79,7 +78,6 @@ const Coin = () => {
                         className="add-to-wallet-button-button"
                         onClick={() => {
                             setModalActive(true);
-
                         }}
                         key={info.name}
                     >

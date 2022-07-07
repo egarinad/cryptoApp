@@ -16,6 +16,7 @@ const Modal = ({active, setActive, currentCoin}) => {
         e.preventDefault();
         const coin = {
             coinId: currentCoin.id,
+            coinPrice: +currentCoin.priceUsd,
             amount: +input,
         };
         dispatch(addCoin(coin));

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 //import {ResponsiveContainer, LineChart, Line, XAxis, YAxis} from "recharts";
-import {Line} from 'react-chartjs-2';
+import {Line} from "react-chartjs-2";
 import {useParams} from "react-router-dom";
 import LoaderForChart from "../LoaderForChart/LoaderForChart";
 import {
@@ -12,7 +12,7 @@ import {
     Title,
     Tooltip,
     Legend,
-} from 'chart.js';
+} from "chart.js";
 
 ChartJS.register(
     CategoryScale,
@@ -27,7 +27,7 @@ ChartJS.register(
 const SimpleChart = () => {
     const params = useParams();
     const url = `https://api.coincap.io/v2/assets/${params.coinId}/history?interval=h1`;
-    const [dates, setDates] = useState([])
+    const [dates, setDates] = useState([]);
     const [price, setPrice] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -35,54 +35,40 @@ const SimpleChart = () => {
         await setLoading(true);
         const result = await fetch(url);
         const info = await result.json();
-        const data = await info.data.reverse().slice(0, 24).reverse()
-        await setPrice(data.map((item) => {
-            return item.priceUsd > 1
-                ? +(+item.priceUsd).toFixed(2)
-                : +(+item.priceUsd).toFixed(5)
-        }))
-        setDates(data.map((item) => {
-            return new Date(item.date).getHours()+"h"
-        }))
+        const data = await info.data.reverse().slice(0, 24).reverse();
+        await setPrice(
+            data.map((item) => {
+                return item.priceUsd > 1
+                    ? +(+item.priceUsd).toFixed(2)
+                    : +(+item.priceUsd).toFixed(5);
+            })
+        );
+        setDates(
+            data.map((item) => {
+                return new Date(item.date).getHours() + "h";
+            })
+        );
         await setLoading(false);
-        console.log(data)
-    }
+    };
 
     useEffect(() => {
-        fetchData(url)
-
-        // setLoading(true);
-        // fetch(url)
-        //     .then((r) => r.json())
-        //     .then((json) => {
-        //         setInfo(json.data.reverse().slice(0,20).reverse());
-        //     })
-        //     .then((info)=>setPrice(info.map((item)=>{
-        //        return  item.priceUsd > 1
-        //             ? +(+item.priceUsd).toFixed(2)
-        //             : +(+item.priceUsd).toFixed(5)
-        //     })))
-        //     .then(() => setLoading(false));
+        fetchData(url);
     }, []);
-
-    console.log(dates)
 
     const state = {
         labels: [...dates],
         datasets: [
             {
-                label: 'Usd',
+                label: "Usd",
                 fill: false,
                 lineTension: 0,
-                backgroundColor: '#8d93ab',
-                borderColor: 'rgba(0,0,0,1)',
+                backgroundColor: "#8d93ab",
+                borderColor: "rgba(0,0,0,1)",
                 borderWidth: 2,
-                data: [...price]
-            }
-        ]
-    }
-
-
+                data: [...price],
+            },
+        ],
+    };
     return (
         <>
             {loading ? (
@@ -95,8 +81,8 @@ const SimpleChart = () => {
                     options={{
                         legend: {
                             display: true,
-                            position: 'right'
-                        }
+                            position: "right",
+                        },
                     }}
                 />
             )}

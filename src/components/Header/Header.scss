@@ -52,7 +52,33 @@
 
 .item:nth-last-child(1) {
   margin-right: 0;
+}
 
+.wallet-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wallet-price-info {
+  font-size: 15px;
+  align-self: center;
+  margin: auto 0;
+  padding-right: 20px;
+  display: flex;
+
+  &__current-price {
+    font-weight: bold;
+    margin-right: 20px;
+  }
+
+  &__difference-positive {
+    color: #2da62d;
+  }
+
+  &__difference-negative {
+    color: #b71717;
+  }
 }
 
 .wallet-button {
