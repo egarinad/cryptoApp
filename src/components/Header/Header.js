@@ -42,10 +42,7 @@ const Header = () => {
                         {+difference > 0 ? (
                             <div className="wallet-price-info__difference-positive">
                                 +
-                                {+difference > 1 || +difference===0
-                                    ? (+difference).toFixed(2)
-                                    : (+difference).toFixed(4)}{" "}
-                                $ {`(${percent}%)`}
+                                {(+difference).toFixed(2)}$ {`(${percent}%)`}
                             </div>
                         ) : (
                             <div className="wallet-price-info__difference-negative">
