@@ -31,7 +31,7 @@ const WalletModal = ({
         return item;
     });
 
-    console.log("Arr", arr);
+    arr.sort((a,b)=> a[5]<b[5] ? 1 : -1)
     const fullPrice = arr.reduce((sum, current) => {
         return (sum += +current[5]);
     }, 0);
