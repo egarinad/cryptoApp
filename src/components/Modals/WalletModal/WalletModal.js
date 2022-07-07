@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./WalletMadal.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {addCoinsFromStorage, delCoin} from "../../../redux/walletReducer";
+import {delCoin} from "../../../redux/walletReducer";
 
 const WalletModal = ({active, setActive}) => {
     const dispatch = useDispatch();
@@ -56,11 +56,10 @@ const WalletModal = ({active, setActive}) => {
                 <ul className="wallet-list">
                     {arr.map((item, i) => (
                         <li className="wallet-list-item" key={i}>
-                            <div className="wallet-list-item__name">{(item[2]).symbol}</div>
+                            <div className="wallet-list-item__name">{item[2].symbol}</div>
                             <div className="wallet-list-item__amount">{item[1]}</div>
                             <div className="wallet-list-item__sum">
-                                {item[4] > 1 ? (+item[4]).toFixed(2) : (+item[4]).toFixed(5)}{" "}
-                                $
+                                {item[4] > 1 ? (+item[4]).toFixed(2) : (+item[4]).toFixed(5)} $
                             </div>
                             <button
                                 className="wallet-list-item__button"

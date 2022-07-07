@@ -1,13 +1,14 @@
 .coin-container {
-  //border: 1px solid black;
-  padding: 2vh 2vw;
+  padding: 2vh 2vw 0  ;
   margin: 0 auto;
   width: 100vw;
   max-width: 900px;
-  height: 90vh;
+  height: 93vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  @media (max-width: 800px) {
+    height: 85vh;
+  }
 }
 
 .coin-header {
@@ -46,54 +47,58 @@
   }
 }
 
+
+
 .coin-chart {
-  background-color: #d6e0f0;
-  text-align: center;
-  height: 40vh;
+  margin: 2vh 0;
+  @media (max-width: 800px) {
+    margin: 5vh 0;
+  }
 }
 
 .coin-info {
   display: flex;
   flex-direction: column;
+  height:20vh;
 }
 
 .info {
+  margin: 2vh 0 1vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid #8d93ab;
   border-radius: 10px;
   height: 30vh;
   font-weight: bold;
-  padding: 2.5vh 0 0;
   font-size: 16px;
+  line-height: 20px;
 
   &__symbol {
+    align-items: center;
     flex: 1;
-    margin: 10px 0 0 10px;
+    margin: 0 0 0 10px;
   }
 
   &__price {
     flex: 1;
-    margin: 10px 0 0 10px;
+    margin: 10px 10px 0;
 
   }
 
   &__posChange {
     flex: 1;
-    margin: 10px 0 0 10px;
+    margin: 10px 10px 0;
     color: #2da62d;
   }
 
   &__negChange {
     flex: 1;
-    margin: 10px 0 0 10px;
+    margin: 10px 10px 0;
     color: #b71717;
   }
 
   &__marketCap {
     flex: 1;
-    margin: 10px 0 0 10px;
+    margin: 10px 10px 0;
   }
 }
 
@@ -113,6 +118,5 @@
   max-width: 400px;
   margin: 0 auto;
   height: 6vh;
-
   border-radius: 10px;
 }

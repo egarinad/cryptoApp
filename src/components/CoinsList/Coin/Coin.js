@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import Modal from "../../Modals/AddCoinModal/Modal";
 import "./Coin.scss";
-//import SimpleChart from "../../../Chart/SimpleChart";
+import SimpleChart from "../../Chart/SimpleChart";
 
 const Coin = () => {
     const params = useParams();
@@ -44,7 +44,9 @@ const Coin = () => {
                             +
                         </button>
                     </div>
-                    <div className="coin-chart">Chart</div>
+                    <div className="coin-chart">
+                        <SimpleChart/>
+                    </div>
                     <div className="coin-info info">
                         <div className="info__symbol">
                             <span className="marker">Symbol: </span>

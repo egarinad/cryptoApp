@@ -13,6 +13,7 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: 7vh;
+  max-height: 15vh;
   @media (max-width: 800px) {
     flex-direction: column;
     padding-top: 2vh;
