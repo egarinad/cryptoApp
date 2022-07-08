@@ -1,0 +1,31 @@
+.confirm-modal-text {
+  text-align: center;
+  font-size: 16px;
+}
+.confirm-modal-coin-name{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.confirm-modal-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.confirm-button{
+  padding: 10px;
+  max-width: 150px;
+  width:35vw;
+  border-radius: 10px;
+}
+
+.confirm-modal-button {
+  margin-right: 20px;
+  background-color: #d6e0f0;
+}
+
+.non-confirm-modal-button {
+  background-color: #8d93ab;
+}

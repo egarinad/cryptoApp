@@ -8,9 +8,6 @@ const Coins = ({currentCoins}) => {
     const [modalActive, setModalActive] = useState(false);
     const [currentCoin, setCurrentCoin] = useState({});
 
-
-
-
     return (
         <div className="coins-container">
             {currentCoins &&

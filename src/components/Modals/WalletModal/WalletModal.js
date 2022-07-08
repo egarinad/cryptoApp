@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./WalletMadal.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {delCoin} from "../../../redux/walletReducer";
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModal";
 
 const WalletModal = ({
                          active,
@@ -11,10 +12,12 @@ const WalletModal = ({
                          setWalletPrice,
                          setWalletBuyPrice,
                      }) => {
-    const dispatch = useDispatch();
     const wallet = useSelector((state) => state.walletRed.wallet);
     const coins = useSelector((state) => state.coinsRed.coins);
-    //console.log(wallet)
+
+    const [confirmModal, setConfirmModal] = useState(false);
+    const [currentCoin, setCurrentCoin] = useState({});
+
     let arr = Object.entries(wallet);
     arr = arr.map((item) => {
         let sum = 0;
@@ -31,7 +34,7 @@ const WalletModal = ({
         return item;
     });
 
-    arr.sort((a,b)=> a[5]<b[5] ? 1 : -1)
+    arr.sort((a, b) => (a[5] < b[5] ? 1 : -1));
     const fullPrice = arr.reduce((sum, current) => {
         return (sum += +current[5]);
     }, 0);
@@ -50,12 +53,6 @@ const WalletModal = ({
             ? (+buyPrice).toFixed(2)
             : (+buyPrice).toFixed(5)
     );
-    const delFromWallet = (coin) => {
-        const a = {
-            coinId: coin.id,
-        };
-        dispatch(delCoin(a));
-    };
 
     return (
         <div
@@ -83,8 +80,7 @@ const WalletModal = ({
                     </div>
                     {+difference > 0 ? (
                         <div className="wallet-price-info__difference-positive">
-                            +
-                            {(+difference).toFixed(2)} $ {`(${percent}%)`}
+                            +{(+difference).toFixed(2)} $ {`(${percent}%)`}
                         </div>
                     ) : (
                         <div className="wallet-price-info__difference-negative">
@@ -102,7 +98,10 @@ const WalletModal = ({
                             </div>
                             <button
                                 className="wallet-list-item__button"
-                                onClick={() => delFromWallet(item[2])}
+                                onClick={() => {
+                                    setConfirmModal(true);
+                                    setCurrentCoin(item[2]);
+                                }}
                             >
                                 X
                             </button>
@@ -110,6 +109,11 @@ const WalletModal = ({
                     ))}
                 </ul>
             </div>
+            <ConfirmationModal
+                confirmModal={confirmModal}
+                setConfirmModal={setConfirmModal}
+                currentCoin={currentCoin}
+            />
         </div>
     );
 };
