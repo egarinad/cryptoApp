@@ -2,6 +2,9 @@ import React, {useEffect, useRef, useState} from "react";
 import "./Modal.scss";
 import {useDispatch} from "react-redux";
 import {addCoin} from "../../../redux/walletReducer";
+import {toast} from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Modal = ({active, setActive, currentCoin}) => {
     const [input, setInput] = useState("");
@@ -12,8 +15,17 @@ const Modal = ({active, setActive, currentCoin}) => {
         inputRef.current.focus();
     });
 
+    const notifySuccess = () => toast.success(`Successfully add ${input} ${currentCoin.name}!`);
+    const notifyError = () => toast.error(`You can't add ${input} ${currentCoin.name}!`);
+
     const addToWallet = (e) => {
         e.preventDefault();
+        if(+input<=0){
+            setInput("");
+            setActive(false);
+            notifyError()
+            return;
+        }
         const coin = {
             coinId: currentCoin.id,
             coinPrice: +currentCoin.priceUsd,
@@ -22,6 +34,7 @@ const Modal = ({active, setActive, currentCoin}) => {
         dispatch(addCoin(coin));
         setInput("");
         setActive(false);
+        notifySuccess();
     };
 
     return (

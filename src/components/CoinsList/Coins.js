@@ -7,6 +7,10 @@ import Modal from "../Modals/AddCoinModal/Modal";
 const Coins = ({currentCoins}) => {
     const [modalActive, setModalActive] = useState(false);
     const [currentCoin, setCurrentCoin] = useState({});
+
+
+
+
     return (
         <div className="coins-container">
             {currentCoins &&
@@ -42,7 +46,6 @@ const Coins = ({currentCoins}) => {
                             onClick={() => {
                                 setModalActive(true);
                                 setCurrentCoin(coin);
-                                //show(coin)
                             }}
                             key={coin.name}
                         >

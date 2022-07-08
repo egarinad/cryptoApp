@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Routes, Route} from "react-router-dom";
 import {fetchCoins} from "./redux/coinsReducer";
@@ -8,6 +8,7 @@ import Coin from "./components/CoinsList/Coin/Coin";
 import Loader from "./components/Loader/Loader";
 import Pagination from "./components/Pagination/Pagination";
 import {addCoinsFromStorage} from "./redux/walletReducer";
+import {ToastContainer} from "react-toastify";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -38,6 +39,17 @@ const App = () => {
                     <Route path=":coinId" element={<Coin/>}/>
                 </Route>
             </Routes>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={1500}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 };
