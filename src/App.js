@@ -1,14 +1,14 @@
-import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {Routes, Route} from "react-router-dom";
-import {fetchCoins} from "./redux/coinsReducer";
-import "./scss/style.scss";
-import Header from "./components/Header/Header";
-import Coin from "./components/CoinsList/Coin/Coin";
-import Loader from "./components/Loader/Loader";
-import Pagination from "./components/Pagination/Pagination";
-import {addCoinsFromStorage} from "./redux/walletReducer";
-import {ToastContainer} from "react-toastify";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
+import { fetchCoins } from './redux/coinsReducer';
+import './scss/style.scss';
+import Header from './components/Header/Header';
+import Coin from './components/CoinsList/Coin/Coin';
+import Loader from './components/Loader/Loader';
+import Pagination from './components/Pagination/Pagination';
+import { addCoinsFromStorage } from './redux/walletReducer';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -19,24 +19,20 @@ const App = () => {
         dispatch(fetchCoins());
     }, []);
 
-    useEffect(()=>{
-        const savedWallet = localStorage.getItem("wallet")
-        setTimeout(()=>{
-            if(savedWallet)
-                dispatch(addCoinsFromStorage(JSON.parse(savedWallet)))
-        },500)
+    useEffect(() => {
+        const savedWallet = localStorage.getItem('wallet');
+        setTimeout(() => {
+            if (savedWallet) dispatch(addCoinsFromStorage(JSON.parse(savedWallet)));
+        }, 500);
     }, []);
 
     return (
         <div className="wrapper">
-            <Header/>
+            <Header />
             <Routes>
-                <Route
-                    path="/"
-                    element={loading ? <Loader/> : <Pagination coins={coins}/>}
-                />
-                <Route path="/coin" element={<Coin/>}>
-                    <Route path=":coinId" element={<Coin/>}/>
+                <Route path="/" element={loading ? <Loader /> : <Pagination coins={coins} />} />
+                <Route path="/coin" element={<Coin />}>
+                    <Route path=":coinId" element={<Coin />} />
                 </Route>
             </Routes>
             <ToastContainer

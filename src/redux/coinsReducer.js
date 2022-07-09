@@ -1,26 +1,26 @@
 const defaultCoins = {
     coins: [],
-    loading: false,
+    loading: false
 };
 
-export const LOAD_COINS = "LOAD_COINS";
-export const FETCH_COINS = "FETCH_COINS";
-export const LOAD_COINS_SUCCESS = "LOAD_COINS_SUCCESS";
+export const LOAD_COINS = 'LOAD_COINS';
+export const FETCH_COINS = 'FETCH_COINS';
+export const LOAD_COINS_SUCCESS = 'LOAD_COINS_SUCCESS';
 
 export const coinsReducer = (state = defaultCoins, action) => {
     switch (action.type) {
         case LOAD_COINS:
-            return {...state, loading: true};
+            return { ...state, loading: true };
         case LOAD_COINS_SUCCESS:
-            return {...state, coins: action.payload.data, loading: false};
+            return { ...state, coins: action.payload.data, loading: false };
         default:
             return state;
     }
 };
 
-export const loadCoins = () => ({type: LOAD_COINS});
+export const loadCoins = () => ({ type: LOAD_COINS });
 export const loadCoinsSuccess = (payload) => ({
     type: LOAD_COINS_SUCCESS,
-    payload,
+    payload
 });
-export const fetchCoins = () => ({type: FETCH_COINS});
+export const fetchCoins = () => ({ type: FETCH_COINS });

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
-import "./pagination.scss";
-import ReactPaginate from "react-paginate";
-import Coins from "../CoinsList/Coins";
+import React, { useEffect, useState } from 'react';
+import './pagination.scss';
+import ReactPaginate from 'react-paginate';
+import Coins from '../CoinsList/Coins';
 
-const Pagination = ({coins}) => {
+const Pagination = ({ coins }) => {
     const ITEMS_ON_PAGE = 15;
 
     const [currentItems, setCurrentItems] = useState(null);
@@ -23,7 +23,7 @@ const Pagination = ({coins}) => {
 
     return (
         <div className="pag">
-            <Coins className="items" currentCoins={currentItems}/>
+            <Coins className="items" currentCoins={currentItems} />
             <div className="pages-container">
                 <div className="pages">
                     <ReactPaginate

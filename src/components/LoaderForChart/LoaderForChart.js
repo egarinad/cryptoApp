@@ -1,5 +1,5 @@
-import React from "react";
-import "./LoaderForChart.scss";
+import React from 'react';
+import './LoaderForChart.scss';
 
 const LoaderForChart = () => {
     return (

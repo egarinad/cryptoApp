@@ -1,9 +1,9 @@
-.header {
+.header-container {
   //border: 1px solid black;
   background-color: #d6e0f0;
 }
 
-.header-container {
+.header {
   color: #393b44;
   padding: 0 2vw;
   margin: 0 auto;
@@ -19,71 +19,82 @@
     padding-top: 2vh;
     padding-bottom: 2vh;
   }
-}
 
-.topThreeCoins {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-  @media (max-width: 800px) {
-    margin-bottom: 2vh;
-  }
-}
+  &__topThreeCoins {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    @media (max-width: 800px) {
+      margin-bottom: 2vh;
+    }
 
-.item {
-  display: flex;
-  flex-direction: row;
-  margin-right: 1vw;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 1vh 0.5vw;
-  @media (max-width: 800px) {
-    margin-right: 4vw;
-  }
+    &__item {
+      display: flex;
+      flex-direction: row;
+      margin-right: 1vw;
+      border-radius: 10px;
+      background-color: #ffffff;
+      padding: 1vh 0.5vw;
+      @media (max-width: 800px) {
+        margin-right: 4vw;
+      }
+      @media (max-width: 350px) {
+        font-size: 12px;
+      }
 
-  &__symbol {
-    font-weight: bold;
-    margin-right: 1vw;
-  }
+      &__symbol {
+        font-weight: bold;
+        margin-right: 1vw;
+      }
 
-  &__price {
-  }
-}
+      &__price {
+      }
+    }
 
-.item:nth-last-child(1) {
-  margin-right: 0;
-}
+    &__item:nth-last-child(1) {
+      margin-right: 0;
+    }
 
-.wallet-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.wallet-price-info {
-  font-size: 15px;
-  align-self: center;
-  margin: auto 0;
-  padding-right: 20px;
-  display: flex;
-
-  &__current-price {
-    font-weight: bold;
-    margin-right: 20px;
   }
 
-  &__difference-positive {
-    color: #2da62d;
-  }
+  &__wallet-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-  &__difference-negative {
-    color: #b71717;
-  }
-}
+    &__price {
+      @media (max-width: 400px) {
+        font-size: 12px;
+      }
+      font-size: 15px;
+      align-self: center;
+      margin: auto 0;
+      padding-right: 1vw;
+      display: flex;
+      max-width: 350px;
 
-.wallet-button {
-  border-radius: 10px;
-  background-color: #8d93ab;
-  padding: 1vh 1vw;
-  align-self: center;
+      &__current-price {
+        font-weight: bold;
+        margin-right: 1vw;
+        @media (max-width: 800px) {
+          margin-right: 2vw;
+        }
+      }
+
+      &__difference-positive {
+        color: #2da62d;
+      }
+
+      &__difference-negative {
+        color: #b71717;
+      }
+    }
+
+    &__button {
+      border-radius: 10px;
+      background-color: #8d93ab;
+      padding: 1vh 1vw;
+      align-self: center;
+    }
+  }
 }
