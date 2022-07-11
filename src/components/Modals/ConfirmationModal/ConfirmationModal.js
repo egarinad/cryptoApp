@@ -21,14 +21,16 @@ const ConfirmationModal = ({ confirmModal, setConfirmModal, currentCoin }) => {
                 e.stopPropagation();
             }}>
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-                <div className="modal__content__confirm-modal-text">
+                <div className="modal__confirm-text">
                     {' '}
-                    You want to delete{' '}
-                    <span className="confirm-modal-coin-name">{currentCoin.name}</span> ?
+                    You want to delete <span className="confirm-coin-name">
+                        {currentCoin.name}
+                    </span>{' '}
+                    ?
                 </div>
-                <div className="modal__content__confirm-modal-buttons">
+                <div className="modal__confirm-buttons">
                     <button
-                        className="modal__content__confirm-modal-buttons__confirm-button confirm-button"
+                        className="modal__confirm-button modal__confirm-button_confirm-button"
                         onClick={() => {
                             delFromWallet(currentCoin);
                             setConfirmModal(false);
@@ -36,7 +38,7 @@ const ConfirmationModal = ({ confirmModal, setConfirmModal, currentCoin }) => {
                         Yes
                     </button>
                     <button
-                        className="modal__content__confirm-modal-buttons__non-confirm-button confirm-button"
+                        className="modal__confirm-button modal__confirm-button_non-confirm-button"
                         onClick={() => {
                             setConfirmModal(false);
                         }}>

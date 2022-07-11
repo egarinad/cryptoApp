@@ -21,79 +21,74 @@
     @media (max-width: 350px) {
       padding: 1.5vh 2.5vw;
     }
+  }
 
-    &__header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
-      &__name {
-        align-self: center;
-        font-size: 18px;
-        font-weight: bold;
-      }
+  &__header-name {
+    align-self: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-      &__button {
-        font-weight: bold;
-        background-color: #d6e0f0;
-        align-self: center;
-        width: 8vw;
-        max-width: 30px;
-        height: 8vw;
-        max-height: 30px;
-        border-radius: 50%;
-      }
+  &__header-button {
+    font-weight: bold;
+    background-color: #d6e0f0;
+    align-self: center;
+    width: 8vw;
+    max-width: 30px;
+    height: 8vw;
+    max-height: 30px;
+    border-radius: 50%;
+  }
 
-      margin-bottom: 20px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__form-data{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__price-change{
+    &_posChange {
+      color: #2da62d;
     }
 
-    &__form {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      &__data {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-      }
-
-      &__input {
-        border-radius: 10px;
-        padding: 5px 10px;
-        border: 1px solid #8d93ab;
-        margin-bottom: 30px;
-        font-size: 18px;
-      }
-
-      &__button {
-        background-color: #8d93ab;
-        font-size: 16px;
-        width: 50vw;
-        max-width: 250px;
-
-        margin: 0 auto;
-        height: 3vh;
-        min-height: 35px;
-        border-radius: 10px;
-      }
-
-      &__data {
-        font-weight: bold;
-        font-size: 16px;
-
-        &__price {
-        }
-
-        &__posChange {
-          color: #2da62d;
-        }
-
-        &__negChange {
-          color: #b71717;
-        }
-      }
+    &_negChange {
+      color: #b71717;
     }
+  }
+
+  &__form-input {
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #8d93ab;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  &__form-button {
+    background-color: #8d93ab;
+    font-size: 16px;
+    width: 50vw;
+    max-width: 250px;
+
+    margin: 0 auto;
+    height: 3vh;
+    min-height: 35px;
+    border-radius: 10px;
   }
 }
 

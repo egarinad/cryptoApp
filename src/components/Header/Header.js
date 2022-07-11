@@ -16,15 +16,13 @@ const Header = () => {
     }
     let coins = useSelector((state) => state.coinsRed.coins).slice(0, 3);
     return (
-        <div className="header-container">
-            <div className="header">
+        <div className="header">
+            <div className="header__container">
                 <ul className="header__topThreeCoins">
                     {coins.map((coin) => (
-                        <li
-                            className={`header__topThreeCoins__${coin.rank} header__topThreeCoins__item`}
-                            key={coin.symbol}>
-                            <div className="header__topThreeCoins__item__symbol">{coin.symbol}</div>
-                            <div className="header__topThreeCoins__item__price">
+                        <li className="header__item" key={coin.symbol}>
+                            <div className="header__item-symbol">{coin.symbol}</div>
+                            <div className="header__item-price">
                                 {+coin.priceUsd > 1 || +coin.priceUsd === 0
                                     ? (+coin.priceUsd).toFixed(2)
                                     : (+coin.priceUsd).toFixed(4)}
@@ -33,23 +31,21 @@ const Header = () => {
                     ))}
                 </ul>
                 <div className="header__wallet-info">
-                    <div className="header__wallet-info__price">
-                        <div className="header__wallet-info__price__current-price">
+                    <div className="header__price">
+                        <div className="header__current-price">
                             {(+walletPrice).toLocaleString('ru')} $
                         </div>
                         {+difference > 0 ? (
-                            <div className="header__wallet-info__price__difference-positive">
+                            <div className="header__difference header__difference_positive">
                                 +{(+(+difference).toFixed(2)).toLocaleString()} $ {`(${percent}%)`}
                             </div>
                         ) : (
-                            <div className="header__wallet-info__price__difference-negative">
+                            <div className="header__difference header__difference_negative">
                                 {(+(+difference).toFixed(2)).toLocaleString()} $ {`(${percent})%`}
                             </div>
                         )}
                     </div>
-                    <button
-                        className="header__wallet-info__button"
-                        onClick={() => setModalActive(true)}>
+                    <button className="header__button" onClick={() => setModalActive(true)}>
                         WALLET
                     </button>
                 </div>

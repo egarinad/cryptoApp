@@ -57,12 +57,10 @@ const WalletModal = ({
             }}>
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>
                 {fullPrice === 0 ? (
-                    <div className="modal__content__wallet-header">
-                        <div className="modal__content__wallet-header__name">
-                            Your wallet is Empty
-                        </div>
+                    <div className="modal__header">
+                        <div className="modal__header-name">Your wallet is Empty</div>
                         <button
-                            className="modal__content__wallet-header__button"
+                            className="modal__header-button"
                             onClick={() => {
                                 setActive(false);
                             }}>
@@ -71,50 +69,50 @@ const WalletModal = ({
                     </div>
                 ) : (
                     <>
-                        <div className="modal__content__wallet-header">
-                            <div className="modal__content__wallet-header__name">Your wallet</div>
+                        <div className="modal__header">
+                            <div className="modal__header-name">Your wallet</div>
                             <button
-                                className="modal__content__wallet-header__button"
+                                className="modal__header-button"
                                 onClick={() => {
                                     setActive(false);
                                 }}>
                                 X
                             </button>
                         </div>
-                        <div className="modal__content__wallet-price">
-                            <div className="modal__content__wallet-price__current-price">
+                        <div className="modal__wallet-price">
+                            <div className="modal__wallet-current-price">
                                 {fullPrice > 1
                                     ? (+(+fullPrice).toFixed(2)).toLocaleString()
                                     : (+fullPrice).toFixed(5)}
                                 $
                             </div>
                             {+difference > 0 ? (
-                                <div className="modal__content__wallet-price__difference-positive">
+                                <div className="modal__wallet-difference modal__wallet-difference_positive">
                                     +{(+difference).toFixed(2)} $ {`(${percent}%)`}
                                 </div>
                             ) : (
-                                <div className="modal__content__wallet-price__difference-negative">
+                                <div className="modal__wallet-difference modal__wallet-difference_negative">
                                     {(+difference).toFixed(2)} $ {`(${percent})%`}
                                 </div>
                             )}
                         </div>
-                        <ul className="modal__content__wallet-list">
+                        <ul className="modal__wallet-list">
                             {arr.map((item, i) => (
-                                <li className="modal__content__wallet-list__item" key={i}>
-                                    <div className="modal__content__wallet-list__item__name">
+                                <li className="modal__wallet-list-item" key={i}>
+                                    <div className="modal__wallet-list-item-name">
                                         {item[2].symbol}
                                     </div>
-                                    <div className="modal__content__wallet-list__item__amount">
+                                    <div className="modal__wallet-list-item-amount">
                                         {(+item[3]).toLocaleString()}
                                     </div>
-                                    <div className="modal__content__wallet-list__item__sum">
+                                    <div className="modal__wallet-list-item-sum">
                                         {item[5] > 1
                                             ? (+(+item[5]).toFixed(2)).toLocaleString()
                                             : (+item[5]).toFixed(5)}{' '}
                                         $
                                     </div>
                                     <button
-                                        className="modal__content__wallet-list__item__button"
+                                        className="modal__wallet-list-item-button"
                                         onClick={() => {
                                             setConfirmModal(true);
                                             setCurrentCoin(item[2]);

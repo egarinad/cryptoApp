@@ -1,39 +1,36 @@
-
 .modal {
-  &__content {
-    &__confirm-modal-text {
-      text-align: center;
-      font-size: 16px;
+  &__confirm-text {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__confirm-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__confirm-button{
+    padding: 10px;
+    max-width: 150px;
+    width: 35vw;
+    border-radius: 10px;
+    &_confirm-button {
+      margin-right: 20px;
+      background-color: #d6e0f0;
     }
 
-    &__confirm-modal-buttons {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-
-      &__confirm-button {
-
-        margin-right: 20px;
-        background-color: #d6e0f0;
-      }
-
-      &__non-confirm-modal-button {
-        background-color: #8d93ab;
-      }
+    &_non-confirm-button {
+      background-color: #8d93ab;
     }
   }
 }
 
-.confirm-modal-coin-name {
+.confirm-coin-name {
   text-decoration: underline;
   font-weight: bold;
 }
 
-.confirm-button {
-  padding: 10px;
-  max-width: 150px;
-  width: 35vw;
-  border-radius: 10px;
-}
+

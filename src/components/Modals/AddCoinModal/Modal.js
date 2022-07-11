@@ -45,10 +45,10 @@ const Modal = ({ active, setActive, currentCoin }) => {
                 setInput('');
             }}>
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-                <div className="modal__content__header">
-                    <div className="modal__content__header__name">{currentCoin.name}</div>
+                <div className="modal__header">
+                    <div className="modal__header-name">{currentCoin.name}</div>
                     <button
-                        className="modal__content__header__button"
+                        className="modal__header-button"
                         onClick={() => {
                             setActive(false);
                             setInput('');
@@ -56,33 +56,33 @@ const Modal = ({ active, setActive, currentCoin }) => {
                         X
                     </button>
                 </div>
-                <form className="modal__content__form" onSubmit={addToWallet}>
-                    <div className="modal__content__form__data">
-                        <div className="modal__content__form__data__price">
+                <form className="modal__form" onSubmit={addToWallet}>
+                    <div className="modal__form-data">
+                        <div className="modal__data-price">
                             Price:{' '}
                             {currentCoin.priceUsd > 1
                                 ? (+currentCoin.priceUsd).toFixed(2)
                                 : (+currentCoin.priceUsd).toFixed(5)}
                         </div>
                         {+currentCoin.changePercent24Hr > 0 ? (
-                            <div className="modal__content__form__data__posChange">
+                            <div className="modal__price-change modal__price-change_posChange">
                                 {`+${(+currentCoin.changePercent24Hr).toFixed(2)}%`}
                             </div>
                         ) : (
-                            <div className="modal__content__form__data__negChange">
+                            <div className="modal__price-change modal__price-change_negChange">
                                 {`${(+currentCoin.changePercent24Hr).toFixed(2)}%`}
                             </div>
                         )}
                     </div>
                     <input
-                        className="modal__content__form__input"
+                        className="modal__form-input"
                         placeholder="Your input..."
                         type="number"
                         onChange={(e) => setInput(e.target.value)}
                         value={input}
                         ref={inputRef}
                     />
-                    <button className="modal__content__form__button">Add to wallet</button>
+                    <button className="modal__form-button">Add to wallet</button>
                 </form>
             </div>
         </div>

@@ -1,98 +1,78 @@
 .modal {
-  &__content {
-    &__wallet-header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      &__name {
-        align-self: center;
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      &__button {
-        font-weight: bold;
-        background-color: #d6e0f0;
-        align-self: center;
-        width: 8vw;
-        max-width: 30px;
-        height: 8vw;
-        max-height: 30px;
-        border-radius: 50%;
-      }
-
-      margin-bottom: 20px;
-    }
-    &__wallet-price {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      font-size: 16px;
-
-      &__current-price {
-        font-weight: bold;
-      }
-
-      &__difference-positive {
-        color: #2da62d;
-      }
-
-      &__difference-negative {
-        color: #b71717;
-      }
-
-      @media (max-width: 400px) {
-        font-size: 13px;
-      }
-    }
-
-    &__wallet-list {
-      border: 3px solid #8d93ab;
-      border-radius: 10px;
-      margin-bottom: 5px;
-      &__item {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 3px solid #8d93ab;
-        padding: 1vh 1vw;
-        text-align: center;
-        min-height: 50px;
-
-        &__name {
-          font-weight: bold;
-          flex: 0 1 20%;
-          align-self: center;
-        }
-
-        &__amount {
-          flex: 0 1 30%;
-          align-self: center;
-        }
-
-        &__sum {
-          font-weight: bold;
-          flex: 0 1 40%;
-          align-self: center;
-        }
-
-        &__button {
-          flex: 0 1 13%;
-          font-weight: bold;
-          background-color: #8d93ab;
-          max-width: 25px;
-          height: 25px;
-          align-self: center;
-          border-radius: 50%;
-        }
-        @media (max-width: 400px) {
-          font-size: 13px;
-        }
-      }
-      &__item:nth-last-child(1) {
-        border-bottom: none;
-      }
+  &__wallet-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 16px;
+    @media (max-width: 400px) {
+      font-size: 13px;
     }
   }
+
+  &__wallet-current-price {
+    font-weight: bold;
+  }
+
+  &__wallet-difference {
+    &_positive {
+      color: #2da62d;
+    }
+
+    &_negative {
+      color: #b71717;
+    }
+  }
+
+  &__wallet-list {
+    border: 3px solid #8d93ab;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    @media (max-width: 400px) {
+      font-size: 13px;
+    }
+  }
+
+  &__wallet-list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #8d93ab;
+    padding: 1vh 1vw;
+    text-align: center;
+    min-height: 50px;
+
+  }
+
+  &__wallet-list-item:nth-last-child(1) {
+    border-bottom: none;
+  }
+
+  &__wallet-list-item-name {
+    font-weight: bold;
+    flex: 0 1 20%;
+    align-self: center;
+  }
+
+  &__wallet-list-item-amount {
+    flex: 0 1 30%;
+    align-self: center;
+  }
+
+  &__wallet-list-item-sum {
+    font-weight: bold;
+    flex: 0 1 40%;
+    align-self: center;
+  }
+
+  &__wallet-list-item-button {
+    flex: 0 1 13%;
+    font-weight: bold;
+    background-color: #8d93ab;
+    max-width: 25px;
+    height: 25px;
+    align-self: center;
+    border-radius: 50%;
+  }
+
+
 }
 

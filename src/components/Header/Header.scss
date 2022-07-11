@@ -1,23 +1,23 @@
-.header-container {
+.header {
   //border: 1px solid black;
   background-color: #d6e0f0;
-}
 
-.header {
-  color: #393b44;
-  padding: 0 2vw;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 900px;
-  flex-direction: row;
-  justify-content: space-between;
-  min-height: 7vh;
-  max-height: 15vh;
-  @media (max-width: 800px) {
-    flex-direction: column;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+  &__container {
+    color: #393b44;
+    padding: 0 2vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 7vh;
+    max-height: 15vh;
+    @media (max-width: 800px) {
+      flex-direction: column;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+    }
   }
 
   &__topThreeCoins {
@@ -27,74 +27,76 @@
     @media (max-width: 800px) {
       margin-bottom: 2vh;
     }
+  }
 
-    &__item {
-      display: flex;
-      flex-direction: row;
-      margin-right: 1vw;
-      border-radius: 10px;
-      background-color: #ffffff;
-      padding: 1vh 0.5vw;
-      @media (max-width: 800px) {
-        margin-right: 4vw;
-      }
-      @media (max-width: 350px) {
-        font-size: 12px;
-      }
-
-      &__symbol {
-        font-weight: bold;
-        margin-right: 1vw;
-      }
-
-      &__price {
-      }
-    }
-
+  @media (max-width: 800px) {
     &__item:nth-last-child(1) {
       margin-right: 0;
     }
+  }
 
+  &__item {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1vw;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 1vh 0.5vw;
+    @media (max-width: 800px) {
+      margin-right: 4vw;
+    }
+    @media (max-width: 350px) {
+      font-size: 12px;
+    }
+  }
+
+  &__item-symbol {
+    font-weight: bold;
+    margin-right: 1vw;
   }
 
   &__wallet-info {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
 
-    &__price {
-      @media (max-width: 400px) {
-        font-size: 12px;
-      }
-      font-size: 15px;
-      align-self: center;
-      margin: auto 0;
-      padding-right: 1vw;
-      display: flex;
-      max-width: 350px;
+  &__price {
+    @media (max-width: 400px) {
+      font-size: 12px;
+    }
+    font-size: 15px;
+    align-self: center;
+    margin: auto 0;
+    padding-right: 1vw;
+    display: flex;
+    max-width: 350px;
 
-      &__current-price {
-        font-weight: bold;
-        margin-right: 1vw;
-        @media (max-width: 800px) {
-          margin-right: 2vw;
-        }
-      }
 
-      &__difference-positive {
-        color: #2da62d;
-      }
+  }
 
-      &__difference-negative {
-        color: #b71717;
-      }
+  &__current-price {
+    font-weight: bold;
+    margin-right: 1vw;
+    @media (max-width: 800px) {
+      margin-right: 2vw;
+    }
+  }
+
+  &__difference {
+    &_positive {
+      color: #2da62d;
     }
 
-    &__button {
-      border-radius: 10px;
-      background-color: #8d93ab;
-      padding: 1vh 1vw;
-      align-self: center;
+    &_negative {
+      color: #b71717;
     }
+  }
+
+  &__button {
+    border-radius: 10px;
+    background-color: #8d93ab;
+    padding: 1vh 1vw;
+    align-self: center;
   }
 }

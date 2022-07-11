@@ -1,55 +1,57 @@
 .coin-page {
-  padding: 3vh 2vw 0;
-  margin: 0 auto;
-  width: 100vw;
-  max-width: 900px;
-  height: 93vh;
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 800px) {
-    height: 85vh;
+  &__container {
+    @media (max-width: 800px) {
+      height: 85vh;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 3vh 2vw 1vh;
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 900px;
+    height: 93vh;
   }
 
-  &__header{
+  &__header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    &__rank {
-      font-size: 18px;
-      background-color: #8d93ab;
-      border-radius: 10px;
-      text-align: center;
-      min-width: 40px;
-      line-height: 35px;
-    }
-
-    &__name {
-      font-size: 20px;
-      border-bottom: 2px solid #8d93ab;
-      font-weight: bold;
-      text-align: center;
-      align-self: center;
-    }
-
-    &__link {
-      color: #8d93ab;
-      border-bottom: 2px solid #8d93ab;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      align-self: center;
-    }
-
   }
 
-  &__chart{
+  &__header-rank {
+    font-size: 18px;
+    background-color: #8d93ab;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 40px;
+    line-height: 35px;
+  }
+
+  &__header-name {
+    font-size: 20px;
+    border-bottom: 2px solid #8d93ab;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+  }
+
+  &__header-link {
+    color: #8d93ab;
+    border-bottom: 2px solid #8d93ab;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+  }
+
+  &__chart {
     margin: 2vh 0;
     @media (max-width: 800px) {
       margin: 5vh 0;
     }
   }
 
-  &__info{
+  &__info {
     margin: 2vh 0 1vh;
     display: flex;
     flex-direction: column;
@@ -58,34 +60,36 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+  }
 
-    &__symbol {
-      align-items: center;
-      flex: 1;
-      margin: 0 0 0 10px;
-    }
+  &__info-symbol {
+    align-items: center;
+    flex: 1;
+    margin: 0 0 0 10px;
+  }
 
-    &__price {
-      flex: 1;
-      margin: 10px 10px 0;
-    }
+  &__info-price {
+    flex: 1;
+    margin: 10px 10px 0;
+  }
 
-    &__posChange {
+  &__info-change {
+    &_posChange {
       flex: 1;
       margin: 10px 10px 0;
       color: #2da62d;
     }
 
-    &__negChange {
+    &_negChange {
       flex: 1;
       margin: 10px 10px 0;
       color: #b71717;
     }
+  }
 
-    &__marketCap {
-      flex: 1;
-      margin: 10px 10px 0;
-    }
+  &__info-marketCap {
+    flex: 1;
+    margin: 10px 10px 0;
   }
 
   &__add-to-wallet-button-button {
@@ -107,4 +111,3 @@
   color: black;
   font-weight: 400;
 }
-

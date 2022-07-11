@@ -30,52 +30,54 @@ const Coin = () => {
                 <Loader />
             ) : (
                 <div className="coin-page">
-                    <div className="coin-page__header">
-                        <div className="coin-page__header__rank">#{info.rank}</div>
-                        <div className="coin-page__header__name">{info.name}</div>
-                        <Link to={'/'} className="coin-page__header__link" key={info.name}>
-                            {'<--'}
-                        </Link>
-                    </div>
-                    <div className="coin-page__chart">
-                        <SimpleChart />
-                    </div>
-                    <div className="coin-page__info">
-                        <div className="coin-page__info__symbol">
-                            <span className="marker">Symbol: </span>
-                            {info.symbol}
+                    <div className="coin-page__container">
+                        <div className="coin-page__header">
+                            <div className="coin-page__header-rank">#{info.rank}</div>
+                            <div className="coin-page__header-name">{info.name}</div>
+                            <Link to={'/'} className="coin-page__header-link" key={info.name}>
+                                {'<--'}
+                            </Link>
                         </div>
-                        <div className="coin-page__info__price">
-                            <span className="marker">Price: </span>
-                            {info.priceUsd > 1
-                                ? (+(+info.priceUsd).toFixed(2)).toLocaleString()
-                                : (+info.priceUsd).toFixed(5)}{' '}
-                            $
+                        <div className="coin-page__chart">
+                            <SimpleChart />
                         </div>
-                        {+info.changePercent24Hr > 0 ? (
-                            <div className="coin-page__info__posChange">
-                                <span className="marker">Changed: </span>{' '}
-                                {`+${(+info.changePercent24Hr).toFixed(2)}%`}
+                        <div className="coin-page__info">
+                            <div className="coin-page__info-symbol">
+                                <span className="marker">Symbol: </span>
+                                {info.symbol}
                             </div>
-                        ) : (
-                            <div className="coin-page__info__negChange">
-                                <span className="marker">Changed: </span>{' '}
-                                {`${(+info.changePercent24Hr).toFixed(2)}%`}
+                            <div className="coin-page__info-price">
+                                <span className="marker">Price: </span>
+                                {info.priceUsd > 1
+                                    ? (+(+info.priceUsd).toFixed(2)).toLocaleString()
+                                    : (+info.priceUsd).toFixed(5)}{' '}
+                                $
                             </div>
-                        )}
-                        <div className="coin-page__info__marketCap">
-                            <span className="marker">MarketCap: </span>{' '}
-                            {(+info.marketCapUsd).toLocaleString()} $
+                            {+info.changePercent24Hr > 0 ? (
+                                <div className="coin-page__info-change coin-page__info-change_posChange">
+                                    <span className="marker">Changed: </span>{' '}
+                                    {`+${(+info.changePercent24Hr).toFixed(2)}%`}
+                                </div>
+                            ) : (
+                                <div className="coin-page__info-change coin-page__info-change_negChange">
+                                    <span className="marker">Changed: </span>{' '}
+                                    {`${(+info.changePercent24Hr).toFixed(2)}%`}
+                                </div>
+                            )}
+                            <div className="coin-page__info-marketCap">
+                                <span className="marker">MarketCap: </span>{' '}
+                                {(+info.marketCapUsd).toLocaleString()} $
+                            </div>
                         </div>
+                        <button
+                            className="coin-page__add-to-wallet-button-button"
+                            onClick={() => {
+                                setModalActive(true);
+                            }}
+                            key={info.name}>
+                            Add to wallet
+                        </button>
                     </div>
-                    <button
-                        className="coin-page__add-to-wallet-button-button"
-                        onClick={() => {
-                            setModalActive(true);
-                        }}
-                        key={info.name}>
-                        Add to wallet
-                    </button>
                 </div>
             )}
             <Modal active={modalActive} setActive={setModalActive} currentCoin={currentCoin} />
