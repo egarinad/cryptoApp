@@ -10,7 +10,7 @@ const Header = () => {
     const [walletBuyPrice, setWalletBuyPrice] = useState(0);
 
     const difference = walletPrice - walletBuyPrice;
-    let percent = (difference / walletPrice).toFixed(2);
+    let percent = ((difference / walletPrice)*100).toFixed(2);
     if (isNaN(percent)) {
         percent = 0;
     }
